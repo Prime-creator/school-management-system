@@ -1,0 +1,82 @@
+<!--Nav bar starts-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Management system</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" routerLink="/"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="#"
+            routerLink="/admin"
+            >Admin Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="#"
+            routerLink="/student"
+            >Student Login</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--Nav bar ends-->
+<h1>Welcome to Admin login</h1>
+
+<div class="container col-md-4">
+  <form #login="ngForm" (ngSubmit)="completeLogin(login)">
+    <div class="col-md-6 form-group">
+      <label for="exampleInputEmail1" class="form-label">User name:</label>
+      <input
+        type="text"
+        [(ngModel)]="name"
+        name="name"
+        id="name"
+        class="form-control"
+      />
+    </div>
+    <div class="col-md-6 form-group">
+      <label for="exampleInputPassword1" class="form-label">Password:</label>
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="name"
+        id="password"
+        class="form-control"
+      />
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      type="submit"
+      [disabled]="!login.valid"
+    >
+      Login
+    </button>
+    <p *ngIf="res" class="pp">
+      &nbsp;&nbsp;&nbsp;&nbsp;Please check your credentials
+    </p>
+  </form>
+</div>

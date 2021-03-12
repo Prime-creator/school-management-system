@@ -1,0 +1,23 @@
+h1 {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.container {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.inside {
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+.pp {
+  color: red;
+}

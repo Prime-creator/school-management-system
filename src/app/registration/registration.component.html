@@ -1,0 +1,126 @@
+<!--navbar starts-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Management system</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" routerLink="/"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="#"
+            routerLink="/admin"
+            >Admin Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="#"
+            routerLink="/student"
+            >Student Login</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--navbar ends-->
+<h1>Welcome to Student registration form</h1>
+<div style="text-align: center">
+  <h1>{{ message }}</h1>
+</div>
+<div class="container col-md-4">
+  <form #registerForm="ngForm">
+    <div class="col-md-6 form-group">
+      <label for="Name" class="form-label">Name</label>
+      <input
+        required
+        [(ngModel)]="student.name"
+        name="name"
+        id="name"
+        placeholder="Enter your fullname..."
+        minlength="4"
+        type="text"
+        class="form-control"
+      />
+    </div>
+    <div class="col-md-6 form-group">
+      <label for="exampleInputPassword1" class="form-label">School</label>
+      <input
+        type="text"
+        required
+        [(ngModel)]="student.school"
+        name="school"
+        id="school"
+        placeholder="Enter your school name..."
+        minlength="4"
+        class="form-control"
+      />
+    </div>
+    <div class="col-md-6 form-group">
+      <label for="exampleInputPassword1" class="form-label">city</label>
+      <input
+        type="text"
+        required
+        [(ngModel)]="student.city"
+        name="city"
+        id="city"
+        placeholder="Enter your city name..."
+        minlength="4"
+        class="form-control"
+      />
+    </div>
+    <div class="col-md-6 form-group">
+      <label for="exampleInputPassword1" class="form-label">MotherName</label>
+      <input
+        type="text"
+        required
+        [(ngModel)]="student.motherName"
+        name="motherName"
+        id="motherName"
+        placeholder="Enter your mother's name..."
+        minlength="4"
+        class="form-control"
+      />
+    </div>
+    <div class="col-md-6 form-group">
+      <label for="exampleInputPassword1" class="form-label">FatherName</label>
+      <input
+        type="text"
+        required
+        [(ngModel)]="student.fatherName"
+        name="fatherName"
+        id="fatherName"
+        placeholder="Enter your fathe's name..."
+        minlength="4"
+        class="form-control"
+      />
+    </div>
+    <button
+      type="submit"
+      (click)="registerNow(registerForm)"
+      class="btn btn-primary"
+      [disabled]="!registerForm.valid"
+    >
+      Register
+    </button>
+  </form>
+</div>
